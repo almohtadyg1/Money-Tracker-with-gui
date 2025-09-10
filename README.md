@@ -19,16 +19,6 @@ Ideal for:
 
 ## 📜 Current Features
 
-- View Data
-
-- Make A Transaction
-- Write A Short Note
-- Add/Edit A Borrower/Lender
-
-- Save and Exit
-- Exit Only
-- RESET and Exit
-
 - **View Data**: Show all saved records  
 - **Make A Transaction**: Add income/expense entries  
 - **Write A Short Note**: Quick notes tied to sessions  
