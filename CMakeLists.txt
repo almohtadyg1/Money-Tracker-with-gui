@@ -21,14 +21,10 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw)
 
 # ------------------------------
-# GLAD (use release archive)
+# GLAD (vendored, no Python)
 # ------------------------------
-FetchContent_Declare(
-    glad
-    URL https://github.com/Dav1dde/glad/archive/refs/tags/v0.1.36.zip
-    DOWNLOAD_EXTRACT_TIMESTAMP true
-)
-FetchContent_MakeAvailable(glad)
+add_library(glad external/glad/src/glad.c)
+target_include_directories(glad PUBLIC external/glad/include)
 
 # ------------------------------
 # ImGui
@@ -86,7 +82,7 @@ add_executable(${PROJECT_NAME} WIN32
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${imgui_SOURCE_DIR}
     ${imgui_SOURCE_DIR}/backends
-    ${glad_SOURCE_DIR}/include
+    external/glad/include
     ${stb_SOURCE_DIR}
     src
 )
