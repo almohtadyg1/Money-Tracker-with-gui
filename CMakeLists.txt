@@ -21,17 +21,17 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw)
 
 # ------------------------------
-# GLAD
+# GLAD (pre-generated repo)
 # ------------------------------
 FetchContent_Declare(
     glad
-    GIT_REPOSITORY https://github.com/Dav1dde/glad.git
-    GIT_TAG v2.0.6
+    GIT_REPOSITORY https://github.com/Dav1dde/glad-gl.git
+    GIT_TAG v0.1.36
 )
 FetchContent_MakeAvailable(glad)
 
 add_library(glad STATIC ${glad_SOURCE_DIR}/src/glad.c)
-target_include_directories(glad PRIVATE ${glad_SOURCE_DIR}/include)
+target_include_directories(glad PUBLIC ${glad_SOURCE_DIR}/include)
 
 # ------------------------------
 # ImGui
@@ -55,6 +55,16 @@ set(IMGUI_SOURCES
 )
 
 # ------------------------------
+# stb (header-only)
+# ------------------------------
+FetchContent_Declare(
+    stb
+    GIT_REPOSITORY https://github.com/nothings/stb.git
+    GIT_TAG master
+)
+FetchContent_MakeAvailable(stb)
+
+# ------------------------------
 # Windows resource file
 # ------------------------------
 if(WIN32)
@@ -63,7 +73,7 @@ if(WIN32)
 endif()
 
 # ------------------------------
-# Create executable
+# Executable
 # ------------------------------
 add_executable(${PROJECT_NAME} WIN32
     src/main.cpp
@@ -80,7 +90,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${imgui_SOURCE_DIR}
     ${imgui_SOURCE_DIR}/backends
     ${glad_SOURCE_DIR}/include
-    external/stb   # keep this local for now unless you want me to FetchContent stb too
+    ${stb_SOURCE_DIR}
     src
 )
 
@@ -93,7 +103,7 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 # ------------------------------
-# Windows-specific libraries
+# Windows-specific
 # ------------------------------
 if(WIN32)
     target_link_libraries(${PROJECT_NAME} opengl32 bcrypt)
@@ -108,7 +118,7 @@ if(WIN32)
 endif()
 
 # ------------------------------
-# For MinGW static linking
+# MinGW static linking
 # ------------------------------
 if(MINGW)
     target_link_libraries(${PROJECT_NAME}
