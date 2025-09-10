@@ -19,16 +19,15 @@ Ideal for:
 
 ## 📜 Current Features
 
-```
-Choose:
-1-  View Data
-2-  Make A Transaction
-3-  Write A Short Note
-4-  Add/Edit A Borrower/Lender
-5-  Save and Exit
-6-  Exit Only
-99- RESET and Exit
-```
+- View Data
+
+- Make A Transaction
+- Write A Short Note
+- Add/Edit A Borrower/Lender
+
+- Save and Exit
+- Exit Only
+- RESET and Exit
 
 - **View Data**: Show all saved records  
 - **Make A Transaction**: Add income/expense entries  
