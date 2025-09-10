@@ -42,8 +42,8 @@ cd Money-Tracker-with-gui
 2. Configure & build with CMake:
 ```cmd
 mkdir build && cd build
-cmake .. -G "Visual Studio 17 2022" -A x64
-cmake --build . --config Release
+cmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release --parallel
 ```
 
 The executable will be in:
@@ -59,8 +59,8 @@ cd Money-Tracker-with-gui
 2. Configure & build with CMake:
 ```cmd
 mkdir build && cd build
-cmake .. -G "MinGW Makefiles"
-cmake --build . --config Release
+cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+cmake --build . --parallel
 ```
 
 The executable will be in:
