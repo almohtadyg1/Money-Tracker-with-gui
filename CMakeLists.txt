@@ -21,16 +21,14 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw)
 
 # ------------------------------
-# GLAD (use release archive instead of git repo)
+# GLAD (use release archive)
 # ------------------------------
 FetchContent_Declare(
     glad
     URL https://github.com/Dav1dde/glad/archive/refs/tags/v0.1.36.zip
+    DOWNLOAD_EXTRACT_TIMESTAMP true
 )
 FetchContent_MakeAvailable(glad)
-
-add_library(glad STATIC ${glad_SOURCE_DIR}/src/glad.c)
-target_include_directories(glad PUBLIC ${glad_SOURCE_DIR}/include)
 
 # ------------------------------
 # ImGui
