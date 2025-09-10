@@ -42,7 +42,7 @@ Choose:
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/almohtadyg1/money-tracker-with-gui.git
+   git clone  --recursive https://github.com/almohtadyg1/Money-Tracker-with-gui.git
    cd money-tracker-with-gui
    ```
 
