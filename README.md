@@ -36,7 +36,7 @@ You can build it either with MSVC (Visual Studio) or MinGW.
 
 1. Clone the repo with submodules:
 ```cmd
-git clone --recursive https://github.com/almohtadyg1/Money-Tracker-with-gui.git
+git clone https://github.com/almohtadyg1/Money-Tracker-with-gui.git
 cd Money-Tracker-with-gui
 ```
 2. Configure & build with CMake:
@@ -53,7 +53,7 @@ The executable will be in:
 
 1. Clone the repo with submodules:
 ```cmd
-git clone --recursive https://github.com/almohtadyg1/Money-Tracker-with-gui.git
+git clone https://github.com/almohtadyg1/Money-Tracker-with-gui.git
 cd Money-Tracker-with-gui
 ```
 2. Configure & build with CMake:
