@@ -21,12 +21,11 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw)
 
 # ------------------------------
-# GLAD (pre-generated repo)
+# GLAD (use release archive instead of git repo)
 # ------------------------------
 FetchContent_Declare(
     glad
-    GIT_REPOSITORY https://github.com/Dav1dde/glad-gl.git
-    GIT_TAG v0.1.36
+    URL https://github.com/Dav1dde/glad/archive/refs/tags/v0.1.36.zip
 )
 FetchContent_MakeAvailable(glad)
 
