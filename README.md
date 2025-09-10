@@ -27,22 +27,47 @@ Ideal for:
 
 ---
 
-## 🛠️ How to Build (cmake)
+## 🛠️ How to Build (CMake, Windows Only)
 
-1. Clone the repo:
-   ```bash
-   git clone  --recursive https://github.com/almohtadyg1/Money-Tracker-with-gui.git
-   cd money-tracker-with-gui
-   ```
+This project uses Windows APIs (windows.h) for encryption, so it can only be compiled on Windows.
+You can build it either with MSVC (Visual Studio) or MinGW.
 
-2. Compile the project:
-   ```bash
-   mkdir build && cd build
-   cmake .. -G "MinGW Makefiles"
-   cmake --build .
-   ```
+### 🔹 Option 1: Build with MSVC (recommended)
 
-> 💡 Requires a C++20 compatible compiler
+1. Clone the repo with submodules:
+```cmd
+git clone --recursive https://github.com/almohtadyg1/Money-Tracker-with-gui.git
+cd Money-Tracker-with-gui
+```
+2. Configure & build with CMake:
+```cmd
+mkdir build && cd build
+cmake .. -G "Visual Studio 17 2022" -A x64
+cmake --build . --config Release
+```
+
+The executable will be in:
+`build/Release/MoneyTracker.exe`
+
+### 🔹 Option 2: Build with MinGW
+
+1. Clone the repo with submodules:
+```cmd
+git clone --recursive https://github.com/almohtadyg1/Money-Tracker-with-gui.git
+cd Money-Tracker-with-gui
+```
+2. Configure & build with CMake:
+```cmd
+mkdir build && cd build
+cmake .. -G "MinGW Makefiles"
+cmake --build . --config Release
+```
+
+The executable will be in:
+`build/MoneyTracker.exe`
+
+> 💡 Requires a C++20 compatible compiler (MSVC 2019+/MinGW-w64).  
+> On GitHub Actions, the project is automatically built with MSVC.
 
 ---
 
